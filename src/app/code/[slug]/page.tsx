@@ -42,16 +42,18 @@ const SinglePage = async ({ params }: { params: { slug: string } }) => {
 
   return (
     <div>
-      <h1 className="font-bold text-xl py-2">
+      <h1 className="font-bold text-gray-900 text-xl py-2">
         {project
           ? project.fullname
           : "Sorry, we are still working on this page"}
       </h1>
-      <div style={{ lineHeight: "2.5" }}>
+      <div style={{ lineHeight: "2.5", color: "#595959" }}>
         {project?.description ? (
           <PortableText value={project.description} />
         ) : (
-          <p>Sorry, no content available at the moment.</p>
+          <p className="text-gray-700">
+            Sorry, no content available at the moment.
+          </p>
         )}
       </div>
     </div>

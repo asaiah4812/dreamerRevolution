@@ -17,7 +17,7 @@ const Footer: React.FC = () => {
                   <Image src={logo} fill={true} alt="logo" />
                 </div>
                 <span className="self-center font-medium sm:font-semibold whitespace-nowrap">
-                  <p className="text-md">DreamerCodeacademy</p>
+                  <p className="text-md text-gray-900">DreamerCodeacademy</p>
                   <span className="text-slate-500 font-light sm:font-normal">
                     Gradenet ICT
                   </span>

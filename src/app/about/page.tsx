@@ -11,7 +11,7 @@ const Contact: React.FC = () => {
     <div
       className={`w-[95%] sm:w-[90%] md:w-[80%] xl:w-[70%] bg-white lg:w-[80%] mx-auto ${dmSans.className}`}
     >
-      <div className="flex items-center justify-center py-8">
+      <div className="flex items-center text-gray-900 justify-center py-8">
         <div className="font-extrabold text-5xl sm:text-7xl md:text-9xl">
           PASSI
         </div>
@@ -35,8 +35,8 @@ const Contact: React.FC = () => {
         <div className="md:w-[45%] mx-auto text-2xl md:text-start tracking-wider space-y-2 py-4 text-center md:text-3xl lg:text-4xl text-black">
           IN <span className="font-bold">DEVELOPMENT</span> WITH OVER THREE
           YEARS OF EXPERIENCE I TURN{" "}
-          <span className="font-bold">IDEAS NTO AMAZING</span> PROJECTS
-          THROUGH THE WORLD OF <span className="font-bold">CREATIVE</span> AND{" "}
+          <span className="font-bold">IDEAS NTO AMAZING</span> PROJECTS THROUGH
+          THE WORLD OF <span className="font-bold">CREATIVE</span> AND{" "}
           <span className="font-bold">INTERACTIVE</span> WEBAPPLICATIONS
         </div>
         <div className="relative mx-auto md:w-[45%] h-[400px] ">

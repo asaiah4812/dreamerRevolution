@@ -18,10 +18,12 @@ ${code}
     <div className={`${bg} lg:${rounded} py-5 min-h-[45vh] flex items-center`}>
       <div className="flex justify-around w-[95%] sm:w-[90%] md:w-[80%] xl:w-[70%] gap-y-5 flex-wrap md:flex-nowrap mx-auto">
         <div className="flex justify-center items-center space-y-3 flex-col text-center">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl text-gray-900 font-bold">
             {language}
           </h1>
-          <span>The Language for building web pages</span>
+          <span className="text-gray-900">
+            The Language for building web pages
+          </span>
           <div className="space-y-3 flex flex-col">
             <button className="px-5 py-2 rounded-full bg-green-600 hover:bg-green-700 text-white">
               Learn {language}

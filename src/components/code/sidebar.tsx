@@ -109,10 +109,12 @@ const Sidebar: React.FC<SidebarProps> = ({ showMenu }) => {
                   href={code.url}
                   className="flex items-center justify-center lg:justify-start"
                 >
-                  <div className="text-xl md:text-2xl lg:text-lg lg:mr-2">
+                  <div className="text-xl md:text-2xl text-gray-900 lg:text-lg lg:mr-2">
                     {code.icon}
                   </div>
-                  <span className="hidden lg:block">{code.name}</span>
+                  <span className="hidden text-gray-900 lg:block">
+                    {code.name}
+                  </span>
                 </Link>
               </li>
             ))}

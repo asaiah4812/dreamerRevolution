@@ -50,9 +50,13 @@ const Navbar:React.FC = () => {
             <Image src={logo} fill={true} alt="logo" />
           </div>
           <div className="flex flex-col space-y-0.5">
-            <h1 className="font-medium text-md">DreamerCodeAcademy</h1>
-            <span className="text-sm">Gradenet ICT HUB</span>
-            <span className="text-xs font-light">dreamer-blog.vercel.app</span>
+            <h1 className="font-medium text-md text-gray-900">
+              DreamerCodeAcademy
+            </h1>
+            <span className="text-sm text-gray-900">Gradenet ICT HUB</span>
+            <span className="text-xs font-light text-gray-800">
+              dreamer-blog.vercel.app
+            </span>
           </div>
         </Link>
         <div className="lg:flex items-center space-x-3 hidden">
@@ -64,10 +68,11 @@ const Navbar:React.FC = () => {
         </div>
         {showSide && (
           <motion.div
-          initial={{ x:120, opacity: 0}}
-          animate={{ x:0, opacity:1}}
-          transition={{ease: 'easeInOut', duration: 0.20}}
-          className="flex flex-col fixed top-0 right-0 h-screen px-3 space-y-4 w-[250px] bg-white justify-center">
+            initial={{ x: 120, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ ease: "easeInOut", duration: 0.2 }}
+            className="flex flex-col fixed top-0 right-0 h-screen px-3 space-y-4 w-[250px] bg-white justify-center"
+          >
             <button
               onClick={handleChange}
               className="text-2xl block bg-slate-600 hover:bg-slate-500 text-white w-fit p-2 rounded-full"
@@ -76,7 +81,7 @@ const Navbar:React.FC = () => {
             </button>
             {Links.map((link) => (
               <Link
-                className="hover:text-blue-700 py-2 hover:bg-slate-200 px-1 rounded-md"
+                className="hover:text-blue-700 py-2 text-gray-900 hover:bg-slate-200 px-1 rounded-md"
                 key={link.id}
                 href={link.url}
               >
@@ -88,7 +93,7 @@ const Navbar:React.FC = () => {
         <button
           title="Menu Bar"
           onClick={handleChange}
-          className="text-2xl block lg:hidden"
+          className="text-2xl block text-gray-900 lg:hidden"
         >
           <FiMenu />
         </button>

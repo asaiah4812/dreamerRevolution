@@ -96,7 +96,7 @@ const Output: React.FC<OutputProps> = ({ editorRef, language }) => {
   return (
     <div className="p-2">
       <div className="flex items-center justify-between">
-        <h2 className="py-3 font-medium">Output</h2>
+        <h2 className="py-3 font-medium text-gray-900">Output</h2>
         <button
           onClick={runCode}
           className="py-3 px-4 text-white bg-blue-600 hover:bg-blue-700 disabled:bg-blue-400"
@@ -113,7 +113,7 @@ const Output: React.FC<OutputProps> = ({ editorRef, language }) => {
             style={{ width: "100%", height: "100%", border: "none" }}
           />
         ) : typeof output === "string" ? (
-          <pre>{output}</pre>
+          <pre className="text-gray-900">{output}</pre>
         ) : (
           output
         )}

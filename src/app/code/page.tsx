@@ -79,34 +79,34 @@ const CodeHome = async () => {
   const program:ProgramProps[] = await getPrograms()
   return (
     <div>
-      <h1 className="font-bold text-md sm:text-xl lg:text-2xl">
+      <h1 className="font-bold text-md text-gray-900 sm:text-xl lg:text-2xl">
         Intoduction to Webdevelopment
       </h1>
       <div>
         {Intros.map((intro) => (
           <div key={intro.id} className="mt-3">
-            <h2
-              className="text-slate-600 text-xl md:text-xl sm:font-medium py-2 md:font-semibold"
-            >
+            <h2 className="text-gray-800 text-xl md:text-xl sm:font-medium py-2 md:font-semibold">
               {intro.title}
             </h2>
             <div className="space-y-3">
-              <ul className="space-y-3 pl-4">
+              <ul className="space-y-3 pl-4 text-gray-700">
                 <li className="list-disc">
-                  <span className="font-medium tracking-widest">Focus: </span>
+                  <span className="font-medium tracking-widest text-gray-800">Focus: </span>
                   <small className="text-sm sm:text-md">{intro.focus}</small>
                 </li>
                 <li className="list-disc">
-                  <span className="font-medium tracking-widest">Skills: </span>
+                  <span className="font-medium tracking-widest text-gray-800">Skills: </span>
                   <small className="text-sm sm:text-md">{intro.skill}</small>
                 </li>
                 <li className="list-disc">
-                  <span className="font-medium tracking-widest">
+                  <span className="font-medium tracking-widest text-gray-800">
                     Responsibilities:{" "}
                   </span>
                   <ul className="space-y-3">
                     {intro.responsibilities.map((res) => (
-                      <li className="list- ml-2" key={res.id}>{res.point}</li>
+                      <li className="list- ml-2" key={res.id}>
+                        {res.point}
+                      </li>
                     ))}
                   </ul>
                 </li>
@@ -116,13 +116,17 @@ const CodeHome = async () => {
         ))}
       </div>
       <div className="mt-4">
-        <h1 className="font-medium md:text-lg">Learning plan</h1>
+        <h1 className="font-medium md:text-lg text-gray-900">Learning plan</h1>
         <div className="flex flex-col mt-2 space-y-3">
-          {
-            program.map(pro => (
-              <Link href={`/code/${pro.slug}`} className="hover:underline" key={pro._id}>{pro.name}</Link>
-            ))
-          }
+          {program.map((pro) => (
+            <Link
+              href={`/code/${pro.slug}`}
+              className="hover:underline text-gray-800"
+              key={pro._id}
+            >
+              {pro.name}
+            </Link>
+          ))}
         </div>
       </div>
     </div>
