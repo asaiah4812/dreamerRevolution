@@ -75,12 +75,12 @@ const CodeBar = () => {
   };
 
   return (
-    <div className="mt-2 bg-indigo-100 h-fit py-1 z-10">
+    <div className="mt-2 bg-indigo-100 h-fit py-2 sm:py-1 z-10">
       <div className="w-[95%] sm:w-[90%] flex flex-wrap md:flex-nowrap gap-y-2 justify-normal sm:justify-start md:w-[80%] space-x-4 xl:w-[70%] h-full mx-auto">
         <Link
           className={`md:font-medium rounded-md text-sm sm:text-md ${
             isActive("/code/") ? "bg-indigo-600" : "bg-indigo-400"
-          } text-white hover:bg-indigo-600 px-3 py-1 md:px-5 lg:text-lg`}
+          } text-white hover:bg-indigo-600 px-3 py-1 md:px-5 text-lg lg:text-xl`}
           href="/code/"
         >
           All
@@ -94,7 +94,7 @@ const CodeBar = () => {
             href={code.url}
           >
             <span className="hidden md:block">{code.name}</span>
-            <span className="text-xl flex items-center justify-center md:hidden">
+            <span className="text-2xl flex items-center justify-center md:hidden">
               {code.icon}
             </span>
           </Link>
