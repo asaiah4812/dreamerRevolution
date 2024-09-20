@@ -48,6 +48,13 @@ const Codes: CodeProps[] = [
     title: "PHP: Hypertext Preprocessor",
     icon: <SiPhp />,
   },
+  {
+    id: 6,
+    name: "NETWORKING",
+    url: "/code/networking",
+    title: "Networking",
+    icon: <MdOutlineNetworkWifi />,
+  },
 ];
 
 const CodeBar = () => {
