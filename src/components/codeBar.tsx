@@ -55,13 +55,6 @@ const Codes: CodeProps[] = [
     title: "Networking",
     icon: <MdOutlineNetworkWifi />,
   },
-  {
-    id: 7,
-    name: "UI/UX",
-    url: "/code/ui-ux",
-    title: "User Interface and User Experience",
-    icon: <CgFigma />,
-  },
 ];
 
 const CodeBar = () => {
