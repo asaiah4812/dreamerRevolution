@@ -42,10 +42,10 @@ const Tutorial = () => {
                   className="w-full h-[300px]"
                   src={youtube.src}
                   title="YouTube video player"
-                  frameborder="0"
+                  frameBorder={0} // Change 'frameborder' to 'frameBorder'
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerpolicy="strict-origin-when-cross-origin"
-                  allowfullscreen
+                  referrerPolicy="strict-origin-when-cross-origin" // 'referrerpolicy' should be in camelCase
+                  allowFullScreen // 'allowfullscreen' should be in camelCase
                 ></iframe>
                 <h2 className="font-medium py-2">{youtube.title}</h2>
               </div>

@@ -14,30 +14,30 @@ interface LinkProp {
     url: string;
 }
 
-const Links = [
-    {
-        id:1,
-        name:'Road map',
-        url:'/roadmap/'
-    },
-    {
-        id:2,
-        name:'Tutorial',
-        url:'/tutorial/'
-    },
-    {
-        id:3,
-        name:'Code Editor',
-        url:'/code-editor/'
-    },
-    {
-        id:4,
-        name:'About',
-        url:'/about/'
-    },
-]
+const Links: LinkProp[] = [
+  {
+    id: 1,
+    name: "Road map",
+    url: "/roadmap/",
+  },
+  {
+    id: 2,
+    name: "Tutorial",
+    url: "/tutorial/",
+  },
+  {
+    id: 3,
+    name: "Code Editor",
+    url: "/code-editor/",
+  },
+  {
+    id: 4,
+    name: "About",
+    url: "/about/",
+  },
+];
 
-const Navbar:React.FC<LinkProp[]> = () => {
+const Navbar:React.FC = () => {
   const [showSide, setShowSide] = useState(false)
   const handleChange = () => {
     setShowSide((prev) => !prev);

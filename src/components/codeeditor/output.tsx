@@ -2,6 +2,7 @@
 import { LANGUAGE_VERSIONS } from "@/lib/constants";
 import axios from "axios";
 import { useState, useRef, useEffect } from "react";
+import * as monaco from "monaco-editor/esm/vs/editor/editor.api";
 
 const API = axios.create({
   baseURL: "https://emkc.org/api/v2/piston",
@@ -10,7 +11,7 @@ const API = axios.create({
 export const executeCode = async (
   language: keyof typeof LANGUAGE_VERSIONS,
   sourceCode: string
-): Promise<unknown> => {
+): Promise<{ run: { output: string } }> => {
   if (language === "html" || language === "css") {
     return {
       run: {
@@ -41,14 +42,19 @@ export const executeCode = async (
   }
 };
 
-const Output = ({ editorRef, language }) => {
-  const [output, setOutput] = useState("");
+interface OutputProps {
+  editorRef: React.RefObject<monaco.editor.IStandaloneCodeEditor>;
+  language: keyof typeof LANGUAGE_VERSIONS;
+}
+
+const Output: React.FC<OutputProps> = ({ editorRef, language }) => {
+  const [output, setOutput] = useState<string | JSX.Element>("");
   const [isLoading, setIsLoading] = useState(false);
-  const iframeRef = useRef(null);
+  const iframeRef = useRef<HTMLIFrameElement>(null);
 
   useEffect(() => {
     if (language === "html" && iframeRef.current) {
-      iframeRef.current.srcdoc = output;
+      iframeRef.current.srcdoc = output as string;
     }
   }, [output, language]);
 
@@ -79,7 +85,9 @@ const Output = ({ editorRef, language }) => {
       }
     } catch (error) {
       console.error("An error occurred:", error);
-      setOutput(`Error: ${error.message || "An unknown error occurred"}`);
+      setOutput(
+        `Error: ${(error as Error).message || "An unknown error occurred"}`
+      );
     } finally {
       setIsLoading(false);
     }
@@ -101,7 +109,7 @@ const Output = ({ editorRef, language }) => {
         {language === "html" ? (
           <iframe
             ref={iframeRef}
-            srcDoc={output}
+            srcDoc={output as string}
             style={{ width: "100%", height: "100%", border: "none" }}
           />
         ) : typeof output === "string" ? (

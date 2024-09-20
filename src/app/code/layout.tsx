@@ -10,10 +10,11 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-      const [showMenu, setShowMenu] = useState<boolean>(true);
-      const handleChange = () => {
-        setShowMenu((prev) => !prev);
-      };
+  const [showMenu, setShowMenu] = useState<boolean>(true);
+  const handleChange = () => {
+    setShowMenu((prev) => !prev);
+  };
+
   return (
     <section className="w-[95%] sm:w-[90%] md:w-[80%] xl:w-[70%] mx-auto">
       <main className="grid grid-cols-5 gap-3">
@@ -23,7 +24,7 @@ export default function RootLayout({
           transition={{ duration: 0.5 }}
           className={`${showMenu ? "col-span-1" : "col-start-1"} relative overflow-x-hidden-hidden px-1`}
         >
-          <Sidebar showMenu={showMenu} />
+          <Sidebar showMenu={showMenu} handleChange={handleChange} /> {/* Pass handleChange as a prop */}
           <button
             title="Menu toggle"
             onClick={handleChange}

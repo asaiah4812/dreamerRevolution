@@ -1,5 +1,4 @@
 import { PortableText } from "@portabletext/react";
-import { TypedObject } from "@portabletext/types";
 import { getProgram } from "../../../../sanity/sanity-utils";
 import { ProgramProps as ExternalProgramProps } from "../../../interface/AllProps";
 
@@ -9,10 +8,18 @@ interface InternalProgramProps
   description: TypedObject | TypedObject[];
 }
 
+type TypedObject = {
+  _type: string;
+  children?: {
+    _type: string;
+    text: string;
+  }[];
+};
+
 const stringToPortableText = (text: string): TypedObject[] => [
   {
     _type: "block",
-    children: [{ _type: "span", text }],
+    children: [{ _type: "span", text: text }],
   },
 ];
 

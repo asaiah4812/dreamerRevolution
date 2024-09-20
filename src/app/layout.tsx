@@ -20,9 +20,7 @@ export const metadata = {
   icons: {
     icon: "/logo.jpg",
   },
-  
 };
-
 
 export default function RootLayout({
   children,
@@ -31,13 +29,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      
       <body className={`bg-stone-100 ${poppins.className}`}>
         <Navbar />
         <div className="mt-[6rem]">
           <CodeBar />
           <main className="mt-[2rem]">{children}</main>
-          <Footer/>
+          <Footer />
         </div>
       </body>
     </html>
