@@ -10,7 +10,6 @@ import { RiJavascriptFill } from "react-icons/ri";
 import { SiPython } from "react-icons/si";
 import { SiPhp } from "react-icons/si";
 import { MdOutlineNetworkWifi } from "react-icons/md";
-import { CgFigma } from "react-icons/cg";
 
 const Codes: CodeProps[] = [
   {
