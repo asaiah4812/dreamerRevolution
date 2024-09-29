@@ -61,7 +61,7 @@ const Navbar:React.FC = () => {
         </Link>
         <div className="lg:flex items-center space-x-3 hidden">
           {Links.map((link) => (
-            <Link className="hover:text-blue-700" key={link.id} href={link.url}>
+            <Link className="hover:text-blue-700 text-gray-900" key={link.id} href={link.url}>
               {link.name}
             </Link>
           ))}
