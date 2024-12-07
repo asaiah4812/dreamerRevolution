@@ -13,7 +13,6 @@ interface Project {
 
 const ProjectsPage: React.FC = () => {
   const [projects, setProjects] = useState<Project[]>([]);
-  const [user, setUser] = useState<{ id: string } | null>(null); // Fixed the type of user state
   const [loading, setLoading] = useState(true);
   const router = useRouter();
 
@@ -25,8 +24,6 @@ const ProjectsPage: React.FC = () => {
         router.push('/'); // Redirect to home if not logged in
         return;
       }
-
-      setUser(session.user); // Removed the unused state update
 
       const { data, error } = await supabase
         .from('projects')
@@ -63,7 +60,7 @@ const ProjectsPage: React.FC = () => {
   if (loading) return <div>Loading projects...</div>;
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto w-[95%] sm:w-[90%] md:w-[80%] xl:w-[70%] lg:w-[80%] px-4 py-8">
       <h1 className="text-3xl font-bold mb-6">My Projects</h1>
       {projects.length === 0 ? (
         <p>No projects found. Start coding!</p>
