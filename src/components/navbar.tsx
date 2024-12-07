@@ -1,17 +1,17 @@
-"use client"
-import Image from 'next/image';
-import logo from '/public/logo.jpg'
-import Link from 'next/link';
+"use client";
+import Image from "next/image";
+import logo from "/public/logo.jpg";
+import Link from "next/link";
 // import { SiHtml5 } from "react-icons/si";
 import { FiMenu } from "react-icons/fi";
 import { RiCloseLargeFill } from "react-icons/ri";
-import { useState } from 'react';
+import { useState } from "react";
 import { motion } from "framer-motion";
 
 interface LinkProp {
-    id: number;
-    name:string;
-    url: string;
+  id: number;
+  name: string;
+  url: string;
 }
 
 const Links: LinkProp[] = [
@@ -37,11 +37,11 @@ const Links: LinkProp[] = [
   },
 ];
 
-const Navbar:React.FC = () => {
-  const [showSide, setShowSide] = useState(false)
+const Navbar: React.FC = () => {
+  const [showSide, setShowSide] = useState(false);
   const handleChange = () => {
     setShowSide((prev) => !prev);
-  }
+  };
   return (
     <nav className="w-full bg-stone-50 py-2 z-40 fixed top-0 left-0 right-0">
       <div className="w-[95%] sm:w-[90%] md:w-[80%] xl:w-[70%] mx-auto flex justify-between">
@@ -61,7 +61,11 @@ const Navbar:React.FC = () => {
         </Link>
         <div className="lg:flex items-center space-x-3 hidden">
           {Links.map((link) => (
-            <Link className="hover:text-blue-700 text-gray-900" key={link.id} href={link.url}>
+            <Link
+              className="hover:text-blue-700 text-gray-900"
+              key={link.id}
+              href={link.url}
+            >
               {link.name}
             </Link>
           ))}
@@ -84,6 +88,7 @@ const Navbar:React.FC = () => {
                 className="hover:text-blue-700 py-2 text-gray-900 hover:bg-slate-200 px-1 rounded-md"
                 key={link.id}
                 href={link.url}
+                onClick={handleChange}
               >
                 {link.name}
               </Link>
@@ -100,6 +105,6 @@ const Navbar:React.FC = () => {
       </div>
     </nav>
   );
-}
+};
 
 export default Navbar;

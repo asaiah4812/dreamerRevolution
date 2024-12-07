@@ -1,3 +1,58 @@
+# DreamerCode Academy - Mobile-First Coding Platform
+
+## About
+DreamerCode Academy is an innovative, mobile-first coding platform designed to break down barriers to coding education. As a coding tutor, I noticed that many of my students faced challenges accessing traditional coding environments due to not having laptops. This platform was created to solve that problem by providing a fully functional coding environment that works seamlessly on mobile devices.
+
+## Developer
+- **Developer**: Asaiah Henson
+- **Role**: Coding Tutor & Full Stack Developer
+- **Project**: DreamerCode Academy Platform
+
+## Purpose
+The primary goal of this platform is to make coding education accessible to everyone, especially students who rely primarily on mobile devices. This platform enables students to:
+- Write and execute code directly from their phones
+- Learn multiple programming languages
+- Save and manage their coding projects
+- Access educational resources and tutorials
+- Practice coding anywhere, anytime
+
+## Features
+- 📱 Mobile-responsive code editor
+- 💻 Support for multiple programming languages
+- 🔄 Real-time code execution
+- 💾 Project saving and management
+- 👥 User authentication
+- 📚 Educational resources
+- 🎯 Interactive tutorials
+- 🌐 Cloud-based storage
+
+## Technologies Used
+- Next.js
+- TypeScript
+- Tailwind CSS
+- Supabase
+- Monaco Editor
+- Framer Motion
+
+## Getting Started
+1. Clone the repository
+
+```bash
+git clone https://github.com/asaiah4812/dreamerRevolution.git
+```
+
+2. Install dependencies
+
+```bash
+npm install
+```
+
+3. Set up environment variables
+
+```bash
+NEXT_PUBLIC_SUPABASE_URL=your_supa
+```
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started

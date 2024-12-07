@@ -1,5 +1,6 @@
 import { defineConfig } from "sanity";
 import { deskTool } from "sanity/desk";
+import { visionTool } from "@sanity/vision";
 import schemas from "./sanity/schema";
 
 const config = defineConfig({
@@ -9,11 +10,11 @@ const config = defineConfig({
 
   title: "Dreamer Code Academy",
 
-  apiVersion: "2024-09-18",
+  apiVersion: "2024-03-07",
 
   basePath: "/admin",
 
-  plugins: [deskTool()],
+  plugins: [deskTool(), visionTool()],
   schema: { types: schemas },
 });
 

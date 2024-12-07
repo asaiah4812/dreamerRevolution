@@ -6,7 +6,7 @@ import Typewriter from "typewriter-effect";
 const Hero = () => {
   return (
     <div
-      className="h-[60vh] flex items-center justify-center rounded-b-[10rem]"
+      className="h-[60vh] flex items-center justify-center md:rounded-b-[10rem]"
       style={{
         backgroundImage: `url('/bg/bg1.jpg ')`,
         backgroundSize: "cover",

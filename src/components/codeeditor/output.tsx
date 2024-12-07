@@ -94,26 +94,26 @@ const Output: React.FC<OutputProps> = ({ editorRef, language }) => {
   };
 
   return (
-    <div className="p-2">
-      <div className="flex items-center justify-between">
-        <h2 className="py-3 font-medium text-gray-900">Output</h2>
+    <div className="h-full flex flex-col p-2 min-h-0">
+      <div className="flex items-center justify-between mb-2">
+        <h2 className="font-medium text-gray-900">Output</h2>
         <button
           onClick={runCode}
-          className="py-3 px-4 text-white bg-blue-600 hover:bg-blue-700 disabled:bg-blue-400"
+          className="px-3 py-1.5 text-sm text-white bg-blue-600 hover:bg-blue-700 disabled:bg-blue-400 rounded-md transition-colors"
           disabled={isLoading}
         >
           {isLoading ? "Running..." : "Run Code"}
         </button>
       </div>
-      <div className="w-full h-[90vh] p-2 rounded-lg mt-2 border border-slate-700 border-solid overflow-auto">
+      <div className="flex-1 w-full rounded-lg border border-slate-700 border-solid overflow-auto min-h-0">
         {language === "html" ? (
           <iframe
             ref={iframeRef}
             srcDoc={output as string}
-            style={{ width: "100%", height: "100%", border: "none" }}
+            className="w-full h-full border-none bg-white"
           />
         ) : typeof output === "string" ? (
-          <pre className="text-gray-900">{output}</pre>
+          <pre className="text-gray-900 p-4 text-sm whitespace-pre-wrap">{output}</pre>
         ) : (
           output
         )}

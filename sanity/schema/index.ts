@@ -1,5 +1,4 @@
-import program from "./program-schema";
+import { SchemaTypeDefinition } from 'sanity';
+import program from './program-schema';
 
-const schemas = [program]
-
-export default schemas;
+export const schemaTypes: SchemaTypeDefinition[] = [program];
